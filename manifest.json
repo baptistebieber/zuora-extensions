@@ -1,7 +1,7 @@
 {
     "manifest_version": 2, 
     "name": "Zuora Extension",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "Baptiste BIEBER",
     "description": "Add functionalities to Zuora!",
     "homepage_url" : "https://github.com/baptistebieber/zuora-extension",
@@ -21,9 +21,9 @@
                 "https://na.zuora.com/apps/DataSource.do*",
                 "https://eu.zuora.com/apps/DataSource.do*",
                 "https://sandbox.eu.com/apps/DataSource.do*"
-            ], 
-            "css" : ["css/style.css"], 
-            "js" : ["js/data-sources.js"] 
+            ],
+            "css" : ["css/style.css"],
+            "js" : ["js/jquery.min.js","js/data-sources.js"]
         }
     ],
     "permissions": [ 
