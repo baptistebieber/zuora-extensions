@@ -85,7 +85,7 @@ function page_execute() {
             $('#input-'+v.replace(/\./g,'-')).attr("checked",true);
         });
         $('#id_expand_Content table[id!=id_all_table]').each(function() {
-            updateCheckCount($(this).attr('id'));
+            window.updateCheckCount($(this).attr('id'));
         });
         $('#select_zoql').text(to_select.join(', '));
     });

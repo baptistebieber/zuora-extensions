@@ -1,7 +1,7 @@
 {
     "manifest_version": 2, 
     "name": "Zuora Extension",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "author": "Baptiste BIEBER",
     "description": "Add functionalities to Zuora!",
     "homepage_url" : "https://github.com/baptistebieber/zuora-extension",
@@ -17,21 +17,39 @@
     "content_scripts" : [
         {
             "matches" : [
+                "https://apisandbox.zuora.com/apps/*",
+                "https://na.zuora.com/apps/*",
+                "https://eu.zuora.com/apps/*",
+                "https://sandbox.eu.zuora.com/apps/*"
+            ],
+            "css" : ["css/style.css"],
+            "js" : ["js/jquery.min.js"]
+        },
+        {
+            "matches" : [
                 "https://apisandbox.zuora.com/apps/DataSource.do*",
                 "https://na.zuora.com/apps/DataSource.do*",
                 "https://eu.zuora.com/apps/DataSource.do*",
-                "https://sandbox.eu.com/apps/DataSource.do*"
+                "https://sandbox.eu.zuora.com/apps/DataSource.do*"
             ],
-            "css" : ["css/style.css"],
-            "js" : ["js/jquery.min.js","js/data-sources.js"]
+            "css" : [],
+            "js" : ["js/data-sources.js"]
+        },
+        {
+            "matches" : [
+                "https://apisandbox.zuora.com/apps/SfdcSync.do*",
+                "https://na.zuora.com/apps/SfdcSync.do*",
+                "https://eu.zuora.com/apps/SfdcSync.do*",
+                "https://sandbox.eu.zuora.com/apps/SfdcSync.do*"
+            ],
+            "css" : [],
+            "js" : ["js/sfdc-sync.js"]
         }
     ],
     "permissions": [ 
-        "cookies",
-        "tabs", 
         "https://apisandbox.zuora.com/*",
         "https://na.zuora.com/*",
         "https://eu.zuora.com/*",
-        "https://sandbox.eu.com/*"
+        "https://sandbox.eu.zuora.com/*"
     ]
 }
